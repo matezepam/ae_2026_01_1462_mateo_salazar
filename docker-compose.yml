@@ -1,0 +1,24 @@
+services:
+
+  postgres:
+
+    image: postgres:16
+
+    container_name: exam2-parking-db
+
+    restart: always
+
+    environment:
+      POSTGRES_DB: parking
+      POSTGRES_USER: parking_user
+      POSTGRES_PASSWORD: parking_pass
+
+    ports:
+      - "55432:5432"
+
+    volumes:
+      - exam2-parking-data:/var/lib/postgresql/data
+
+volumes:
+
+  exam2-parking-data:

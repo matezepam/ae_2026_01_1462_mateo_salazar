@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: parking
+  datasource:
+    url: jdbc:postgresql://localhost:55432/parking
+    driver-class-name: org.postgresql.Driver
+    username: parking_user
+    password: parking_pass
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_yzwNALI2A
+
+server:
+  port: 8080
